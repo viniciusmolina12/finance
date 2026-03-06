@@ -6,14 +6,14 @@ import { SqliteUnitOfWork } from "#shared/infrastructure/database/sqlite-unit-of
 import { ConfirmUserEmailUseCase } from "#user/application/usecases/confirm-user-email-use-case.js";
 import { RegisterUserUseCase } from "#user/application/usecases/register-user-use-case.js";
 import { SqliteUserRepository } from "#user/infrastructure/sqlite-user.repository.js";
-import { ConfirmUserEmailController } from "#presentation/http/controllers/confirm-user-email-controller.js";
-import { RegisterUserController } from "#presentation/http/controllers/register-user-controller.js";
+import { ConfirmUserEmailController } from "#presentation/http/controllers/users/confirm-user-email-controller.js";
+import { RegisterUserController } from "#presentation/http/controllers/users/register-user-controller.js";
 import { createUsersRoutes } from "#presentation/http/routes/users-routes.js";
 import { CreateCategoryUseCase } from "#category/application/usecases/create-category-use-case.js";
 import { ListCategoriesUseCase } from "#category/application/usecases/list-categories-use-case.js";
 import { SqliteCategoryRepository } from "#category/infrastructure/sqlite-category.repository.js";
-import { CreateCategoryController } from "#presentation/http/controllers/create-category-controller.js";
-import { ListCategoriesController } from "#presentation/http/controllers/list-categories-controller.js";
+import { CreateCategoryController } from "#presentation/http/controllers/categories/create-category-controller.js";
+import { ListCategoriesController } from "#presentation/http/controllers/categories/list-categories-controller.js";
 import { createCategoriesRoutes } from "#presentation/http/routes/categories-routes.js";
 
 export function createApp() {

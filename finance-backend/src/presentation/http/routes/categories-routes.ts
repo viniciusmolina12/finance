@@ -1,7 +1,7 @@
 import { Router } from "express";
 
-import { CreateCategoryController } from "#presentation/http/controllers/create-category-controller.js";
-import { ListCategoriesController } from "#presentation/http/controllers/list-categories-controller.js";
+import { CreateCategoryController } from "#presentation/http/controllers/categories/create-category-controller.js";
+import { ListCategoriesController } from "#presentation/http/controllers/categories/list-categories-controller.js";
 
 export function createCategoriesRoutes(
   create_category_controller: CreateCategoryController,
