@@ -1,0 +1,2 @@
+ALTER TABLE users ADD COLUMN is_active INTEGER NOT NULL DEFAULT 0;
+ALTER TABLE users ADD COLUMN email_confirmed_at TEXT;
