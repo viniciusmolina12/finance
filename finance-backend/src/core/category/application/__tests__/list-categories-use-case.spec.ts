@@ -24,6 +24,10 @@ class InMemoryCategoryRepository implements ICategoryRepository {
     this.categories.push(category);
   }
 
+  public async findById(id: CategoryId): Promise<Category | null> {
+    return this.categories.find((c) => c.id.value === id.value) ?? null;
+  }
+
   public async findAll(filters: ListCategoriesFilters): Promise<Category[]> {
     if (!filters.name) {
       return this.categories;

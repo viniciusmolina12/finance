@@ -1,6 +1,6 @@
 import { DomainError } from "#shared/domain/domain-error.js";
 import { UnitOfWork } from "#shared/domain/unit-of-work.js";
-import { Category } from "#category/domain/category.aggregate.js";
+import { Category, CategoryId } from "#category/domain/category.aggregate.js";
 import {
   ICategoryRepository,
   ListCategoriesFilters,
@@ -12,6 +12,10 @@ class InMemoryCategoryRepository implements ICategoryRepository {
 
   public async create(category: Category): Promise<void> {
     this.categories.push(category);
+  }
+
+  public async findById(id: CategoryId): Promise<Category | null> {
+    return this.categories.find((c) => c.id.value === id.value) ?? null;
   }
 
   public async findAll(filters: ListCategoriesFilters): Promise<Category[]> {
