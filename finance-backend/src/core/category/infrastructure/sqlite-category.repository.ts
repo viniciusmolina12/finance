@@ -6,6 +6,7 @@ import {
   ListCategoriesFilters,
 } from "#category/domain/category.repository.js";
 
+
 type CategoryRow = {
   id: string;
   name: string;
@@ -25,6 +26,27 @@ export class SqliteCategoryRepository implements ICategoryRepository {
       category.created_at.toISOString(),
       category.updated_at.toISOString(),
     );
+  }
+
+  public async findById(id: CategoryId): Promise<Category | null> {
+    const db = await getSqliteConnection();
+    const row = await db.get<CategoryRow>(
+      `SELECT id, name, created_at, updated_at
+       FROM categories
+       WHERE id = ?`,
+      id.value,
+    );
+
+    if (!row) {
+      return null;
+    }
+
+    return Category.rehydrate({
+      id: CategoryId.create(row.id),
+      name: CategoryName.create(row.name),
+      created_at: new Date(row.created_at),
+      updated_at: new Date(row.updated_at),
+    });
   }
 
   public async findAll(filters: ListCategoriesFilters): Promise<Category[]> {
