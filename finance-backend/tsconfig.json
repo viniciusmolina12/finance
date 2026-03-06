@@ -15,6 +15,7 @@
       "#shared/*": ["core/shared/*"],
       "#user/*": ["core/user/*"],
       "#category/*": ["core/category/*"],
+      "#bill/*": ["core/bill/*"],
       "#presentation/*": ["presentation/*"]
     }
   },

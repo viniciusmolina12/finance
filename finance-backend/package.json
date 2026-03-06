@@ -23,6 +23,7 @@
     "#shared/*": "./dist/core/shared/*",
     "#user/*": "./dist/core/user/*",
     "#category/*": "./dist/core/category/*",
+    "#bill/*": "./dist/core/bill/*",
     "#presentation/*": "./dist/presentation/*"
   },
   "dependencies": {
