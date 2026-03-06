@@ -22,6 +22,7 @@
   "imports": {
     "#shared/*": "./dist/core/shared/*",
     "#user/*": "./dist/core/user/*",
+    "#category/*": "./dist/core/category/*",
     "#presentation/*": "./dist/presentation/*"
   },
   "dependencies": {

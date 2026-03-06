@@ -21,6 +21,7 @@ module.exports = {
     "^(\\.{1,2}/.*)\\.js$": "$1",
     "^#shared/(.*)\\.js$": "<rootDir>/src/core/shared/$1",
     "^#user/(.*)\\.js$": "<rootDir>/src/core/user/$1",
+    "^#category/(.*)\\.js$": "<rootDir>/src/core/category/$1",
     "^#presentation/(.*)\\.js$": "<rootDir>/src/presentation/$1"
   },
 };
