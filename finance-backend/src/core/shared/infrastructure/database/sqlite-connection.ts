@@ -8,13 +8,21 @@ config();
 
 let db_instance: Database | null = null;
 
+export async function closeSqliteConnection(): Promise<void> {
+  if (db_instance) {
+    await db_instance.close();
+    db_instance = null;
+  }
+}
+
 export async function getSqliteConnection(): Promise<Database> {
   if (db_instance) {
     return db_instance;
   }
 
   const database_url = process.env.DATABASE_URL ?? "./finance.db";
-  const database_file = resolve(database_url);
+  const database_file =
+    database_url === ":memory:" ? ":memory:" : resolve(database_url);
 
   db_instance = await open({
     filename: database_file,
