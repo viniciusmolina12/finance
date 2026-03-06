@@ -6,7 +6,7 @@ import { RegisterUserUseCase } from "#user/application/usecases/register-user-us
 
 const register_user_schema = z.object({
   name: z.string().min(3),
-  email: z.string().email(),
+  email: z.email(),
   password: z.string().min(6),
 });
 

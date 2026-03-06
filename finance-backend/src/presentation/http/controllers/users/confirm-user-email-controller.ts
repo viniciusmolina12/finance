@@ -5,7 +5,7 @@ import { handleHttpControllerError } from "#presentation/http/controller-error-h
 import { ConfirmUserEmailUseCase } from "#user/application/usecases/confirm-user-email-use-case.js";
 
 const confirm_user_email_schema = z.object({
-  token: z.string().uuid(),
+  token: z.uuid(),
 });
 
 export class ConfirmUserEmailController {

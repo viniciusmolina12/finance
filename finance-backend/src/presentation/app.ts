@@ -25,7 +25,7 @@ export function createApp() {
     "/categories",
     createCategoriesRoutes(categories.create_category, categories.list_categories),
   );
-  app.use("/bills", createBillsRoutes(bills.create_bill));
+  app.use("/bill", createBillsRoutes(bills.create_bill));
 
   app.get("/health", (_request, response) => {
     response.status(200).json({ status: "ok" });

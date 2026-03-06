@@ -5,10 +5,10 @@ import { handleHttpControllerError } from "#presentation/http/controller-error-h
 import { CreateBillUseCase } from "#bill/application/usecases/create-bill-use-case.js";
 
 const create_bill_schema = z.object({
-  category_id: z.string().uuid(),
+  category_id: z.uuid(),
   description: z.string().min(1).max(255),
   value: z.number().positive(),
-  date: z.string().datetime(),
+  date: z.iso.datetime(),
 });
 
 export class CreateBillController {
